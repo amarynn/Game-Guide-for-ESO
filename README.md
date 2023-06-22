@@ -8,8 +8,11 @@
 
 ## :pencil2: Planning & Problem Solving
 - 
-![Wireframe picture](./NameOfPictureHere.png)
-- Link to User Stories Trello board - https://trello.com/b/6fCYEAni/game-guides-eso
+![Wireframe picture](./guide_page_wireframe.png)
+![Wireframe picture](./classes_page_wireframe.png)
+![Wireframe picture](./create_page_wireframe.png)
+- [Click to go to trello user stories](https://trello.com/b/6fCYEAni/game-guides-eso)
+-
 
 ## :star2: Potential Improvements
 - 
