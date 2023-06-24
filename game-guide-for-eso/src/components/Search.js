@@ -1,20 +1,59 @@
+import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
+
 function Search() {
+    let [guideList, setGuideList] = useState([])
+    let [searchClassFilter, setSearchClassFilters] = useState("%20")
+    let [searchRoleFilter, setSearchRoleFilters] = useState("%20")
+    let [searchTerm, setSearchTerm] = useState("")
+
+    function addClassSearchParam(classNameString) {
+        setSearchClassFilters(classNameString)
+    }
+
+    function addRoleSearchParam(classNameString) {
+        setSearchRoleFilters(classNameString)
+    }
+
+    function getFilteredGuides() {
+        fetch(`/guides/filtered/${searchClassFilter}/${searchRoleFilter}`)
+            .then(res => res.json())
+            .then(res => setGuideList(res))
+    }
+
+    function filterResults() {
+        let itemsSearchedFor = guideList.filter((items, index) => {
+            if (guideList[index].guide_title.includes(searchTerm)) {
+                return [].push(items)
+            }
+        }, [])
+        setGuideList(itemsSearchedFor)
+    }
+
+    useEffect(getFilteredGuides, [searchClassFilter, searchRoleFilter])
+    useEffect(filterResults, [searchTerm])
+
     return (
         <>
-            <input type="text" name="searchinput" className="search-input" />
+            <input value={searchTerm} onChange={e => setSearchTerm(e.target.value)} type="text" name="searchinput" className="search-input" placeholder="Search Guide Names" />
             <section className="search-class-buttons">
-                <button className="search-class-dragonknight" name="Dragonknight">Dragon Knight</button>
-                <button className="search-class-templar" name="Templar">Templar</button>
-                <button className="search-class-sorcerer" name="Sorcerer">Sorcerer</button>
-                <button className="search-class-nightblade" name="Nightblade">Nightblade</button>
-                <button className="search-class-warden" name="Warden">Warden</button>
-                <button className="search-class-necromancer" name="Necromancer">Necromancer</button>
-                <button className="search-class-arcanist" name="Arcanist">Arcanist</button>
+                <button onClick={() => addClassSearchParam("Dragonknight")} className="search-class">Dragon Knight</button>
+                <button onClick={() => addClassSearchParam("Templar")} className="search-class" >Templar</button>
+                <button onClick={() => addClassSearchParam("Sorcerer")} className="search-class">Sorcerer</button>
+                <button onClick={() => addClassSearchParam("Nightblade")} className="search-class">Nightblade</button>
+                <button onClick={() => addClassSearchParam("Warden")} className="search-class" >Warden</button>
+                <button onClick={() => addClassSearchParam("Necromancer")} className="search-class">Necromancer</button>
+                <button onClick={() => addClassSearchParam("Arcanist")} className="search-class">Arcanist</button>
             </section>
             <section className="search-role-buttons">
-                <button className="search-role-tank" name="Tank">Tank</button>
-                <button className="search-role-healer" name="Healer">Healer</button>
-                <button className="search-role-dps" name="Dps">Dps</button>
+                <button onClick={() => addRoleSearchParam("Tank")} className="search-role-tank">Tank</button>
+                <button onClick={() => addRoleSearchParam("Healer")} className="search-role-healer">Healer</button>
+                <button onClick={() => addRoleSearchParam("Dps")} className="search-role-dps">Dps</button>
+            </section>
+            <section className="guides">
+                {guideList.map((guide) =>
+                    <Link to={guide.guide_title} key={guide.id}>{guide.guide_title}: {guide.class_name}, {guide.role_name}, Likes: {guide.likes}</Link>
+                )}
             </section>
         </>
     )
