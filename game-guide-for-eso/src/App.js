@@ -14,7 +14,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/search" element={<Search />} />
-                    <Route path="/search/:guideName" element={<DisplaySpecificGuide />} />
+                    <Route path="/search/:guideId" element={<DisplaySpecificGuide />} />
                 </Routes>
             </section>
         </div>

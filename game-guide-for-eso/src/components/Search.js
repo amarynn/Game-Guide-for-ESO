@@ -35,7 +35,7 @@ function Search() {
 
     return (
         <>
-            <input value={searchTerm} onChange={e => setSearchTerm(e.target.value)} type="text" name="searchinput" className="search-input" placeholder="Search Guide Names" />
+            <input value={searchTerm} onChange={e => setSearchTerm(e.target.value)} type="text" name="searchinput" className="search-input" placeholder="Search currently displayed guides" />
             <section className="search-class-buttons">
                 <button onClick={() => addClassSearchParam("Dragonknight")} className="search-class">Dragon Knight</button>
                 <button onClick={() => addClassSearchParam("Templar")} className="search-class" >Templar</button>
@@ -52,7 +52,7 @@ function Search() {
             </section>
             <section className="guides">
                 {guideList.map((guide) =>
-                    <Link to={guide.guide_title} key={guide.id}>{guide.guide_title}: {guide.class_name}, {guide.role_name}, Likes: {guide.likes}</Link>
+                    <Link to={guide.id.toString()} key={guide.id}>{guide.guide_title}: {guide.class_name}, {guide.role_name}, Likes: {guide.likes}</Link>
                 )}
             </section>
         </>
