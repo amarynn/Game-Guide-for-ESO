@@ -1,8 +1,10 @@
-import { Routes, Route, Link } from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 import Home from "./components/Home";
 import VertNavBar from "./components/Vertnavbar";
 import Search from "./components/Search";
 import DisplaySpecificGuide from "./components/Displayspecificguide";
+import DisplayPopularList from "./components/Popular";
+import PostNewGuide from "./components/Create";
 
 function App() {
     return (
@@ -15,6 +17,9 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/search" element={<Search />} />
                     <Route path="/search/:guideId" element={<DisplaySpecificGuide />} />
+                    <Route path="/popular" element={<DisplayPopularList />} />
+                    <Route path="/popular/:guideId" element={<DisplaySpecificGuide />} />
+                    <Route path="/create" element={<PostNewGuide />} />
                 </Routes>
             </section>
         </div>

@@ -18,7 +18,7 @@ function Search() {
     function getFilteredGuides() {
         fetch(`/guides/filtered/${searchClassFilter}/${searchRoleFilter}`)
             .then(res => res.json())
-            .then(res => setGuideList(res))
+            .then(res => setGuideList(res.reverse()))
     }
 
     function filterResults() {
@@ -28,6 +28,14 @@ function Search() {
             }
         }, [])
         setGuideList(itemsSearchedFor)
+        if (searchTerm.length === 0) {
+            getFilteredGuides()
+        }
+    }
+
+    function clearFilters() {
+        setSearchClassFilters("%20")
+        setSearchRoleFilters("%20")
     }
 
     useEffect(getFilteredGuides, [searchClassFilter, searchRoleFilter])
@@ -50,6 +58,7 @@ function Search() {
                 <button onClick={() => addRoleSearchParam("Healer")} className="search-role-healer">Healer</button>
                 <button onClick={() => addRoleSearchParam("Dps")} className="search-role-dps">Dps</button>
             </section>
+            <button onClick={() => { clearFilters() }}>Clear Filters</button>
             <section className="guides">
                 {guideList.map((guide) =>
                     <Link to={guide.id.toString()} key={guide.id}>{guide.guide_title}: {guide.class_name}, {guide.role_name}, Likes: {guide.likes}</Link>
