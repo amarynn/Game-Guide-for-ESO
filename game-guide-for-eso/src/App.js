@@ -5,6 +5,7 @@ import Search from "./components/Search";
 import DisplaySpecificGuide from "./components/Displayspecificguide";
 import DisplayPopularList from "./components/Popular";
 import PostNewGuide from "./components/Create";
+import "./static/styles.css"
 
 function App() {
     return (

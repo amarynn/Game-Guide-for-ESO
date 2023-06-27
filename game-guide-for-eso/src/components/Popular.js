@@ -14,11 +14,19 @@ function DisplayPopularList() {
 
     return (
         <>
-            <section className="guides">
-                {guideList.map((guide) =>
-                    <Link to={guide.id.toString()} key={guide.id}>{guide.guide_title}: {guide.class_name}, {guide.role_name}, Likes: {guide.likes}</Link>
-                )}
+            <section className="page-title">
+                <h1>Popular Guides</h1>
+                <section className="guides">
+                    {guideList.map((guide) =>
+                        <Link to={guide.id.toString()} key={guide.id} className="guide-link">
+                            <h4>{guide.guide_title}</h4>
+                            <p>Class: {guide.class_name}</p>
+                            <p>Role: {guide.role_name}</p>
+                            <p>Likes: {guide.likes}</p></Link>
+                    )}
+                </section>
             </section>
+
         </>
     )
 }
