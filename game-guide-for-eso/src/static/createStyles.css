@@ -1,0 +1,167 @@
+.center-align {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.build-title-input {
+    background-color: rgb(28, 28, 28);
+    color: white;
+    border: 2px solid rgba(178, 178, 178, 0.724);
+    border-radius: 8px;
+    min-height: 20px;
+    min-width: 400px;
+}
+
+.armor-weight-button {
+    background-color: black;
+    color: white;
+    border: 3px solid rgba(34, 78, 189, 0.757);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.armor-weights {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 5px;
+}
+
+.current-armor-weight {
+    margin: 0;
+    width: 140px;
+}
+
+.equipment-input {
+    background-color: rgb(28, 28, 28);
+    color: white;
+    border: 2px solid rgba(178, 178, 178, 0.724);
+    border-radius: 8px;
+    min-height: 20px;
+    min-width: 400px;
+    align-self: center;
+}
+
+.new-skill-bars {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 120px;
+    margin-bottom: 30px;
+}
+
+.new-skill-bars input {
+    background-color: rgb(32, 32, 32);
+    border: 2px solid rgba(131, 131, 131, 0.641);
+    border-radius: 4px;
+    margin: 1px;
+}
+
+.add-skills {
+    background-color: black;
+    border: 3px solid rgba(0, 100, 0, 0.641);
+    border-radius: 8px;
+    width: 250px;
+    height: 220px;
+}
+
+.main-skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    width: 200px;
+}
+
+.ultimate-skill {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.new-attributes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.attribute-inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: black;
+    border: 3px solid rgba(0, 100, 0, 0.641);
+    border-radius: 8px;
+    padding: 10px 10px 10px 10px;
+    height: 25px;
+    margin: 0;
+    gap: 40px;
+}
+
+.attribute-inputs label {
+    margin: 0;
+}
+
+.attribute-inputs input {
+    background-color: rgb(32, 32, 32);
+    border: 2px solid rgba(131, 131, 131, 0.641);
+    border-radius: 4px;
+}
+
+.create-champion-points {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0;
+    gap: 18px;
+}
+
+.create-champion-points input {
+    background-color: rgb(32, 32, 32);
+    border: 2px solid rgba(131, 131, 131, 0.641);
+    border-radius: 2px;
+}
+
+.new-champion-points {
+    background-color: black;
+    border: 3px solid rgba(0, 100, 0, 0.641);
+    border-radius: 8px;
+    width: 300px;
+    height: 160px;
+}
+
+.new-consumables {
+    margin: 10px auto;
+}
+
+.new-consumables input {
+    background-color: rgb(32, 32, 32);
+    border: 3px solid rgba(131, 131, 131, 0.641);
+    border-radius: 4px;
+}
+
+.create-new-submit {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    width: 130px;
+    height: 60px;
+    cursor: pointer;
+    color: white;
+    background-color: rgba(29, 29, 54, 0.659);
+    border: 3px solid rgba(3, 95, 255, 0.641);
+    border-radius: 4px;
+}
+
+.create-new-submit h3 {
+    margin: 0 auto;
+}
+
+label {
+    margin-top: 10px;
+    margin-left: 10px;
+}

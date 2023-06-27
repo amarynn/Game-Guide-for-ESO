@@ -301,13 +301,21 @@ function DisplaySpecificGuide() {
                 </section>
                 <br />
                 <h3>Comments</h3>
-                <section>
-                    <textarea value={newCommentData} onChange={e => setNewCommentData(e.target.value)} cols="30" rows="10"></textarea>
-                    <button onClick={() => { createNewComment() }}>Submit</button>
+                <section className="new-comment">
+                    <section className="new-comment-ui">
+                        <textarea value={newCommentData} onChange={e => setNewCommentData(e.target.value)} className="new-comment-input" placeholder="Type your comment here!"></textarea>
+                        <button onClick={() => { createNewComment() }} className="new-comment-submit">Submit</button>
+                    </section>
                 </section>
-                {commentData?.map(comment =>
-                    <p>Anonymous: {comment.comment}</p>
-                )}
+                <section className="comment-list">
+                    {commentData?.map(comment =>
+                        <section className="comment">
+                            <h5>Anonymous:</h5>
+                            <p> {comment.comment}</p>
+                        </section>
+                    )}
+                </section>
+
             </section>
         </>
     )

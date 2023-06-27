@@ -1,4 +1,5 @@
 import { useState } from "react"
+import "../static/createStyles.css"
 
 function PostNewGuide() {
     let [guideTitle, setGuideTitle] = useState("")
@@ -223,286 +224,359 @@ function PostNewGuide() {
                 <h1>Create New Guide</h1>
                 <section action="" className="new-guide-create-form">
                     <h3>Build Title</h3>
-                    <input type="text" onChange={e => { setGuideTitle(e.target.value) }} />
+                    <section className="center-align">
+                        <input className="build-title-input" placeholder="Type Here" type="text" onChange={e => { setGuideTitle(e.target.value) }} />
+                    </section>
                     <h3>Build Description</h3>
-                    <textarea type="text" onChange={e => { setGuideDescription(e.target.value) }} />
+                    <section className="center-align">
+                        <textarea type="text" onChange={e => { setGuideDescription(e.target.value) }} className="new-comment-input" placeholder="Enter the builds description" />
+                    </section>
                     <h3>Choose A Class</h3>
-                    <button onClick={() => { setClassName("DragonKnight") }}>DragonKnight</button>
-                    <button onClick={() => { setClassName("Templar") }}>Templar</button>
-                    <button onClick={() => { setClassName("Sorcerer") }}>Sorcerer</button>
-                    <button onClick={() => { setClassName("Nightblade") }}>Nightblade</button>
-                    <button onClick={() => { setClassName("Warden") }}>Warden</button>
-                    <button onClick={() => { setClassName("Necromancer") }}>Necromancer</button>
-                    <button onClick={() => { setClassName("Arcanist") }}>Arcanist</button>
-                    <label htmlFor="">Currently: {className}</label>
+                    <section className="center-align">
+                        <button onClick={() => { setClassName("DragonKnight") }} className="search-class">DragonKnight</button>
+                        <button onClick={() => { setClassName("Templar") }} className="search-class">Templar</button>
+                        <button onClick={() => { setClassName("Sorcerer") }} className="search-class">Sorcerer</button>
+                        <button onClick={() => { setClassName("Nightblade") }} className="search-class">Nightblade</button>
+                        <button onClick={() => { setClassName("Warden") }} className="search-class">Warden</button>
+                        <button onClick={() => { setClassName("Necromancer") }} className="search-class">Necromancer</button>
+                        <button onClick={() => { setClassName("Arcanist") }} className="search-class">Arcanist</button>
+                    </section>
+                    <section className="center-align">
+                        <label htmlFor="">Currently: {className}</label>
+                    </section>
                     <h3>Choose A Role</h3>
-                    <button onClick={() => { setRoleName("Tank") }}>Tank</button>
-                    <button onClick={() => { setRoleName("Healer") }}>Healer</button>
-                    <button onClick={() => { setRoleName("Dps") }}>Dps</button>
-                    <label htmlFor="">Currently: {roleName}</label>
+                    <section className="center-align">
+                        <button onClick={() => { setRoleName("Tank") }} className="search-class">Tank</button>
+                        <button onClick={() => { setRoleName("Healer") }} className="search-class">Healer</button>
+                        <button onClick={() => { setRoleName("Dps") }} className="search-class">Dps</button>
+                    </section>
+                    <section className="center-align">
+                        <label htmlFor="">Currently: {roleName}</label>
+                    </section>
                     <h3>Enter a Preferred Character Race</h3>
-                    <input type="text" onChange={e => { setCharacterRaceSuggestion(e.target.value) }} />
+                    <section className="center-align">
+                        <input className="build-title-input" placeholder="Type Here" type="text" onChange={e => { setCharacterRaceSuggestion(e.target.value) }} />
+                    </section>
                     <h3>Armor, Jewellery and Weapons</h3>
-                    <section className="create-equipment">
+                    <section className="equipment">
                         <h4>Head Armor</h4>
                         <label htmlFor="">Armor Set Name: </label>
-                        <input type="text" onChange={e => { setHeadSetName(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setHeadSetName(e.target.value) }} />
                         <label htmlFor="">Choose Armor Weight: </label>
-                        <button onClick={e => { setHeadArmorWeight("Heavy") }}>Heavy</button>
-                        <button onClick={e => { setHeadArmorWeight("Medium") }}>Medium</button>
-                        <button onClick={e => { setHeadArmorWeight("Light") }}>Light</button>
+                        <section className="armor-weights">
+                            <button className="armor-weight-button" onClick={e => { setHeadArmorWeight("Heavy") }}>Heavy</button>
+                            <button className="armor-weight-button" onClick={e => { setHeadArmorWeight("Medium") }}>Medium</button>
+                            <button className="armor-weight-button" onClick={e => { setHeadArmorWeight("Light") }}>Light</button>
+                            <label className="current-armor-weight" htmlFor="">Currently: {headArmorWeight}</label>
+                        </section>
                         <label htmlFor="">Enchantment: </label>
-                        <input type="text" onChange={e => { setHeadEnchantment(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setHeadEnchantment(e.target.value) }} />
                         <label htmlFor="">Trait: </label>
-                        <input type="text" onChange={e => { setHeadTrait(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setHeadTrait(e.target.value) }} />
                         <label htmlFor="">Where to obtain the Set: </label>
-                        <input type="text" onChange={e => { setHeadWhereToObtain(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setHeadWhereToObtain(e.target.value) }} />
                     </section>
-                    <section className="create-equipment">
+                    <section className="equipment">
                         <h4>Shoulder Armor</h4>
                         <label htmlFor="">Armor Set Name: </label>
-                        <input type="text" onChange={e => { setShoulderSetName(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setShoulderSetName(e.target.value) }} />
                         <label htmlFor="">Choose Armor Weight: </label>
-                        <button onClick={e => { setShoulderArmorWeight("Heavy") }}>Heavy</button>
-                        <button onClick={e => { setShoulderArmorWeight("Medium") }}>Medium</button>
-                        <button onClick={e => { setShoulderArmorWeight("Light") }}>Light</button>
+                        <section className="armor-weights">
+                            <button className="armor-weight-button" onClick={e => { setShoulderArmorWeight("Heavy") }}>Heavy</button>
+                            <button className="armor-weight-button" onClick={e => { setShoulderArmorWeight("Medium") }}>Medium</button>
+                            <button className="armor-weight-button" onClick={e => { setShoulderArmorWeight("Light") }}>Light</button>
+                            <label className="current-armor-weight" htmlFor="">Currently: {shoulderArmorWeight}</label>
+                        </section>
                         <label htmlFor="">Enchantment: </label>
-                        <input type="text" onChange={e => { setShoulderEnchantment(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setShoulderEnchantment(e.target.value) }} />
                         <label htmlFor="">Trait: </label>
-                        <input type="text" onChange={e => { setShoulderTrait(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setShoulderTrait(e.target.value) }} />
                         <label htmlFor="">Where to obtain the Set: </label>
-                        <input type="text" onChange={e => { setShoulderWhereToObtain(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setShoulderWhereToObtain(e.target.value) }} />
                     </section>
-                    <section className="create-equipment">
+                    <section className="equipment">
                         <h4>Body Armor</h4>
                         <label htmlFor="">Armor Set Name: </label>
-                        <input type="text" onChange={e => { setBodySetName(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setBodySetName(e.target.value) }} />
                         <label htmlFor="">Choose Armor Weight: </label>
-                        <button onClick={e => { setBodyArmorWeight("Heavy") }}>Heavy</button>
-                        <button onClick={e => { setBodyArmorWeight("Medium") }}>Medium</button>
-                        <button onClick={e => { setBodyArmorWeight("Light") }}>Light</button>
+                        <section className="armor-weights">
+                            <button className="armor-weight-button" onClick={e => { setBodyArmorWeight("Heavy") }}>Heavy</button>
+                            <button className="armor-weight-button" onClick={e => { setBodyArmorWeight("Medium") }}>Medium</button>
+                            <button className="armor-weight-button" onClick={e => { setBodyArmorWeight("Light") }}>Light</button>
+                            <label className="current-armor-weight" htmlFor="">Currently: {bodyArmorWeight}</label>
+                        </section>
                         <label htmlFor="">Enchantment: </label>
-                        <input type="text" onChange={e => { setBodyEnchantment(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setBodyEnchantment(e.target.value) }} />
                         <label htmlFor="">Trait: </label>
-                        <input type="text" onChange={e => { setBodyTrait(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setBodyTrait(e.target.value) }} />
                         <label htmlFor="">Where to obtain the Set: </label>
-                        <input type="text" onChange={e => { setBodyWhereToObtain(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setBodyWhereToObtain(e.target.value) }} />
                     </section>
-                    <section className="create-equipment">
+                    <section className="equipment">
                         <h4>Hand Armor</h4>
                         <label htmlFor="">Armor Set Name: </label>
-                        <input type="text" onChange={e => { setHandSetName(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setHandSetName(e.target.value) }} />
                         <label htmlFor="">Choose Armor Weight: </label>
-                        <button onClick={e => { setHandArmorWeight("Heavy") }}>Heavy</button>
-                        <button onClick={e => { setHandArmorWeight("Medium") }}>Medium</button>
-                        <button onClick={e => { setHandArmorWeight("Light") }}>Light</button>
+                        <section className="armor-weights">
+                            <button className="armor-weight-button" onClick={e => { setHandArmorWeight("Heavy") }}>Heavy</button>
+                            <button className="armor-weight-button" onClick={e => { setHandArmorWeight("Medium") }}>Medium</button>
+                            <button className="armor-weight-button" onClick={e => { setHandArmorWeight("Light") }}>Light</button>
+                            <label className="current-armor-weight" htmlFor="">Currently: {handArmorWeight}</label>
+                        </section>
                         <label htmlFor="">Enchantment: </label>
-                        <input type="text" onChange={e => { setHandEnchantment(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setHandEnchantment(e.target.value) }} />
                         <label htmlFor="">Trait: </label>
-                        <input type="text" onChange={e => { setHandTrait(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setHandTrait(e.target.value) }} />
                         <label htmlFor="">Where to obtain the Set: </label>
-                        <input type="text" onChange={e => { setHandWhereToObtain(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setHandWhereToObtain(e.target.value) }} />
                     </section>
-                    <section className="create-equipment">
+                    <section className="equipment">
                         <h4>Belt Armor</h4>
                         <label htmlFor="">Armor Set Name: </label>
-                        <input type="text" onChange={e => { setBeltSetName(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setBeltSetName(e.target.value) }} />
                         <label htmlFor="">Choose Armor Weight: </label>
-                        <button onClick={e => { setBeltArmorWeight("Heavy") }}>Heavy</button>
-                        <button onClick={e => { setBeltArmorWeight("Medium") }}>Medium</button>
-                        <button onClick={e => { setBeltArmorWeight("Light") }}>Light</button>
+                        <section className="armor-weights">
+                            <button className="armor-weight-button" onClick={e => { setBeltArmorWeight("Heavy") }}>Heavy</button>
+                            <button className="armor-weight-button" onClick={e => { setBeltArmorWeight("Medium") }}>Medium</button>
+                            <button className="armor-weight-button" onClick={e => { setBeltArmorWeight("Light") }}>Light</button>
+                            <label className="current-armor-weight" htmlFor="">Currently: {beltArmorWeight}</label>
+                        </section>
                         <label htmlFor="">Enchantment: </label>
-                        <input type="text" onChange={e => { setBeltEnchantment(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setBeltEnchantment(e.target.value) }} />
                         <label htmlFor="">Trait: </label>
-                        <input type="text" onChange={e => { setBeltTrait(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setBeltTrait(e.target.value) }} />
                         <label htmlFor="">Where to obtain the Set: </label>
-                        <input type="text" onChange={e => { setBeltWhereToObtain(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setBeltWhereToObtain(e.target.value) }} />
                     </section>
-                    <section className="create-equipment">
+                    <section className="equipment">
                         <h4>Leg Armor</h4>
                         <label htmlFor="">Armor Set Name: </label>
-                        <input type="text" onChange={e => { setLegSetName(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setLegSetName(e.target.value) }} />
                         <label htmlFor="">Choose Armor Weight: </label>
-                        <button onClick={e => { setLegArmorWeight("Heavy") }}>Heavy</button>
-                        <button onClick={e => { setLegArmorWeight("Medium") }}>Medium</button>
-                        <button onClick={e => { setLegArmorWeight("Light") }}>Light</button>
+                        <section className="armor-weights">
+                            <button className="armor-weight-button" onClick={e => { setLegArmorWeight("Heavy") }}>Heavy</button>
+                            <button className="armor-weight-button" onClick={e => { setLegArmorWeight("Medium") }}>Medium</button>
+                            <button className="armor-weight-button" onClick={e => { setLegArmorWeight("Light") }}>Light</button>
+                            <label className="current-armor-weight" htmlFor="">Currently: {legArmorWeight}</label>
+                        </section>
                         <label htmlFor="">Enchantment: </label>
-                        <input type="text" onChange={e => { setLegEnchantment(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setLegEnchantment(e.target.value) }} />
                         <label htmlFor="">Trait: </label>
-                        <input type="text" onChange={e => { setLegTrait(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setLegTrait(e.target.value) }} />
                         <label htmlFor="">Where to obtain the Set: </label>
-                        <input type="text" onChange={e => { setLegWhereToObtain(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setLegWhereToObtain(e.target.value) }} />
                     </section>
-                    <section className="create-equipment">
+                    <section className="equipment">
                         <h4>Boots</h4>
                         <label htmlFor="">Armor Set Name: </label>
-                        <input type="text" onChange={e => { setBootsSetName(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setBootsSetName(e.target.value) }} />
                         <label htmlFor="">Choose Armor Weight: </label>
-                        <button onClick={e => { setBootsArmorWeight("Heavy") }}>Heavy</button>
-                        <button onClick={e => { setBootsArmorWeight("Medium") }}>Medium</button>
-                        <button onClick={e => { setBootsArmorWeight("Light") }}>Light</button>
+                        <section className="armor-weights">
+                            <button className="armor-weight-button" onClick={e => { setBootsArmorWeight("Heavy") }}>Heavy</button>
+                            <button className="armor-weight-button" onClick={e => { setBootsArmorWeight("Medium") }}>Medium</button>
+                            <button className="armor-weight-button" onClick={e => { setBootsArmorWeight("Light") }}>Light</button>
+                            <label className="current-armor-weight" htmlFor="">Currently: {bootsArmorWeight}</label>
+                        </section>
                         <label htmlFor="">Enchantment: </label>
-                        <input type="text" onChange={e => { setBootsEnchantment(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setBootsEnchantment(e.target.value) }} />
                         <label htmlFor="">Trait: </label>
-                        <input type="text" onChange={e => { setBootsTrait(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setBootsTrait(e.target.value) }} />
                         <label htmlFor="">Where to obtain the Set: </label>
-                        <input type="text" onChange={e => { setBootsWhereToObtain(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setBootsWhereToObtain(e.target.value) }} />
                     </section>
-                    <section className="create-equipment">
+                    <section className="equipment">
                         <h4>Necklace</h4>
                         <label htmlFor="">Armor Set Name: </label>
-                        <input type="text" onChange={e => { setNecklaceSetName(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setNecklaceSetName(e.target.value) }} />
                         <label htmlFor="">Enchantment: </label>
-                        <input type="text" onChange={e => { setNecklaceEnchantment(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setNecklaceEnchantment(e.target.value) }} />
                         <label htmlFor="">Trait: </label>
-                        <input type="text" onChange={e => { setNecklaceTrait(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setNecklaceTrait(e.target.value) }} />
                         <label htmlFor="">Where to obtain the Set: </label>
-                        <input type="text" onChange={e => { setNecklaceWhereToObtain(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setNecklaceWhereToObtain(e.target.value) }} />
                     </section>
-                    <section className="create-equipment">
+                    <section className="equipment">
                         <h4>Ring 1</h4>
                         <label htmlFor="">Armor Set Name: </label>
-                        <input type="text" onChange={e => { setRing1SetName(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setRing1SetName(e.target.value) }} />
                         <label htmlFor="">Enchantment: </label>
-                        <input type="text" onChange={e => { setRing1Enchantment(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setRing1Enchantment(e.target.value) }} />
                         <label htmlFor="">Trait: </label>
-                        <input type="text" onChange={e => { setRing1Trait(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setRing1Trait(e.target.value) }} />
                         <label htmlFor="">Where to obtain the Set: </label>
-                        <input type="text" onChange={e => { setRing1WhereToObtain(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setRing1WhereToObtain(e.target.value) }} />
                     </section>
-                    <section className="create-equipment">
+                    <section className="equipment">
                         <h4>Ring 2</h4>
                         <label htmlFor="">Armor Set Name: </label>
-                        <input type="text" onChange={e => { setRing2SetName(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setRing2SetName(e.target.value) }} />
                         <label htmlFor="">Enchantment: </label>
-                        <input type="text" onChange={e => { setRing2Enchantment(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setRing2Enchantment(e.target.value) }} />
                         <label htmlFor="">Trait: </label>
-                        <input type="text" onChange={e => { setRing2Trait(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setRing2Trait(e.target.value) }} />
                         <label htmlFor="">Where to obtain the Set: </label>
-                        <input type="text" onChange={e => { setRing2WhereToObtain(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setRing2WhereToObtain(e.target.value) }} />
                     </section>
-                    <section className="create-equipment">
+                    <section className="equipment">
                         <h4>Primary Mainhand Weapon</h4>
                         <label htmlFor="">Weapon Set Name: </label>
-                        <input type="text" onChange={e => { setPrimaryMainhandSetName(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setPrimaryMainhandSetName(e.target.value) }} />
                         <label htmlFor="">Weapon Type: </label>
-                        <input type="text" onChange={e => { setPrimaryMainhandWeaponType(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setPrimaryMainhandWeaponType(e.target.value) }} />
                         <label htmlFor="">Enchantment: </label>
-                        <input type="text" onChange={e => { setPrimaryMainhandEnchantment(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setPrimaryMainhandEnchantment(e.target.value) }} />
                         <label htmlFor="">Trait: </label>
-                        <input type="text" onChange={e => { setPrimaryMainhandTrait(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setPrimaryMainhandTrait(e.target.value) }} />
                         <label htmlFor="">Where to obtain the Set: </label>
-                        <input type="text" onChange={e => { setPrimaryMainhandWhereToObtain(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setPrimaryMainhandWhereToObtain(e.target.value) }} />
                     </section>
-                    <section className="create-equipment">
+                    <section className="equipment">
                         <h4>Primary Offhand Weapon</h4>
                         <label htmlFor="">Weapon Set Name: </label>
-                        <input type="text" onChange={e => { setPrimaryOffhandSetName(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setPrimaryOffhandSetName(e.target.value) }} />
                         <label htmlFor="">Weapon Type: </label>
-                        <input type="text" onChange={e => { setPrimaryOffhandWeaponType(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setPrimaryOffhandWeaponType(e.target.value) }} />
                         <label htmlFor="">Enchantment: </label>
-                        <input type="text" onChange={e => { setPrimaryOffhandEnchantment(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setPrimaryOffhandEnchantment(e.target.value) }} />
                         <label htmlFor="">Trait: </label>
-                        <input type="text" onChange={e => { setPrimaryOffhandTrait(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setPrimaryOffhandTrait(e.target.value) }} />
                         <label htmlFor="">Where to obtain the Set: </label>
-                        <input type="text" onChange={e => { setPrimaryOffhandWhereToObtain(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setPrimaryOffhandWhereToObtain(e.target.value) }} />
                     </section>
-                    <section className="create-equipment">
+                    <section className="equipment">
                         <h4>Secondary Mainhand Weapon</h4>
                         <label htmlFor="">Weapon Set Name: </label>
-                        <input type="text" onChange={e => { setSecondaryMainhandSetName(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setSecondaryMainhandSetName(e.target.value) }} />
                         <label htmlFor="">Weapon Type: </label>
-                        <input type="text" onChange={e => { setSecondaryMainhandWeaponType(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setSecondaryMainhandWeaponType(e.target.value) }} />
                         <label htmlFor="">Enchantment: </label>
-                        <input type="text" onChange={e => { setSecondaryMainhandEnchantment(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setSecondaryMainhandEnchantment(e.target.value) }} />
                         <label htmlFor="">Trait: </label>
-                        <input type="text" onChange={e => { setSecondaryMainhandTrait(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setSecondaryMainhandTrait(e.target.value) }} />
                         <label htmlFor="">Where to obtain the Set: </label>
-                        <input type="text" onChange={e => { setSecondaryMainhandWhereToObtain(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setSecondaryMainhandWhereToObtain(e.target.value) }} />
                     </section>
-                    <section className="create-equipment">
+                    <section className="equipment">
                         <h4>Secondary Offhand Weapon</h4>
                         <label htmlFor="">Weapon Set Name: </label>
-                        <input type="text" onChange={e => { setSecondaryOffhandSetName(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setSecondaryOffhandSetName(e.target.value) }} />
                         <label htmlFor="">Weapon Type: </label>
-                        <input type="text" onChange={e => { setSecondaryOffhandWeaponType(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setSecondaryOffhandWeaponType(e.target.value) }} />
                         <label htmlFor="">Enchantment: </label>
-                        <input type="text" onChange={e => { setSecondaryOffhandEnchantment(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setSecondaryOffhandEnchantment(e.target.value) }} />
                         <label htmlFor="">Trait: </label>
-                        <input type="text" onChange={e => { setSecondaryOffhandTrait(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setSecondaryOffhandTrait(e.target.value) }} />
                         <label htmlFor="">Where to obtain the Set: </label>
-                        <input type="text" onChange={e => { setSecondaryOffhandWhereToObtain(e.target.value) }} />
+                        <input className="equipment-input" placeholder="Type Here" type="text" onChange={e => { setSecondaryOffhandWhereToObtain(e.target.value) }} />
                     </section>
                     <h3>Skills</h3>
-                    <section className="primary-skills">
-                        <h4>Primary Skill Bar</h4>
-                        <input placeholder="Type Skill Name" type="text" onChange={e => { setSkillPrimary1(e.target.value) }} />
-                        <input placeholder="Type Skill Name" type="text" onChange={e => { setSkillPrimary2(e.target.value) }} />
-                        <input placeholder="Type Skill Name" type="text" onChange={e => { setSkillPrimary3(e.target.value) }} />
-                        <input placeholder="Type Skill Name" type="text" onChange={e => { setSkillPrimary4(e.target.value) }} />
-                        <input placeholder="Type Skill Name" type="text" onChange={e => { setSkillPrimary5(e.target.value) }} />
-                        <label htmlFor="">Ultimate: </label>
-                        <input placeholder="Type Skill Name" type="text" onChange={e => { setSkillPrimaryUltimate(e.target.value) }} />
+                    <section className="new-skill-bars">
+                        <section className="add-skills">
+                            <h4>Primary Skill Bar</h4>
+                            <section className="main-skills">
+                                <input className="skill-input" placeholder="Type Skill Name" type="text" onChange={e => { setSkillPrimary1(e.target.value) }} />
+                                <input className="skill-input" placeholder="Type Skill Name" type="text" onChange={e => { setSkillPrimary2(e.target.value) }} />
+                                <input className="skill-input" placeholder="Type Skill Name" type="text" onChange={e => { setSkillPrimary3(e.target.value) }} />
+                                <input className="skill-input" placeholder="Type Skill Name" type="text" onChange={e => { setSkillPrimary4(e.target.value) }} />
+                                <input className="skill-input" placeholder="Type Skill Name" type="text" onChange={e => { setSkillPrimary5(e.target.value) }} />
+                            </section>
+                            <section className="ultimate-skill">
+                                <label htmlFor="">Ultimate: </label>
+                                <input className="skill-input" placeholder="Type Skill Name" type="text" onChange={e => { setSkillPrimaryUltimate(e.target.value) }} />
+                            </section>
+                        </section>
+                        <section className="add-skills">
+                            <h4>Secondary Skill Bar</h4>
+                            <section className="main-skills">
+                                <input className="skill-input" placeholder="Type Skill Name" type="text" onChange={e => { setSkillSecondary1(e.target.value) }} />
+                                <input className="skill-input" placeholder="Type Skill Name" type="text" onChange={e => { setSkillSecondary2(e.target.value) }} />
+                                <input className="skill-input" placeholder="Type Skill Name" type="text" onChange={e => { setSkillSecondary3(e.target.value) }} />
+                                <input className="skill-input" placeholder="Type Skill Name" type="text" onChange={e => { setSkillSecondary4(e.target.value) }} />
+                                <input className="skill-input" placeholder="Type Skill Name" type="text" onChange={e => { setSkillSecondary5(e.target.value) }} />
+                            </section>
+                            <section className="ultimate-skill">
+                                <label htmlFor="">Ultimate: </label>
+                                <input className="skill-input" placeholder="Type Skill Name" type="text" onChange={e => { setSkillSecondaryUltimate(e.target.value) }} />
+                            </section>
+                        </section>
                     </section>
-                    <section className="primary-skills">
-                        <h4>Secondary Skill Bar</h4>
-                        <input placeholder="Type Skill Name" type="text" onChange={e => { setSkillSecondary1(e.target.value) }} />
-                        <input placeholder="Type Skill Name" type="text" onChange={e => { setSkillSecondary2(e.target.value) }} />
-                        <input placeholder="Type Skill Name" type="text" onChange={e => { setSkillSecondary3(e.target.value) }} />
-                        <input placeholder="Type Skill Name" type="text" onChange={e => { setSkillSecondary4(e.target.value) }} />
-                        <input placeholder="Type Skill Name" type="text" onChange={e => { setSkillSecondary5(e.target.value) }} />
-                        <label htmlFor="">Ultimate: </label>
-                        <input placeholder="Type Skill Name" type="text" onChange={e => { setSkillSecondaryUltimate(e.target.value) }} />
-                    </section>
-                    <section className="attributes">
-                        <h4>Attributes</h4>
-                        <label htmlFor="">Health: </label>
-                        <input type="text" onChange={e => { setAttributesHealth(e.target.value) }} />
-                        <label htmlFor="">Stamina: </label>
-                        <input type="text" onChange={e => { setAttributesStamina(e.target.value) }} />
-                        <label htmlFor="">Magicka: </label>
-                        <input type="text" onChange={e => { setAttributesMagicka(e.target.value) }} />
+                    <section className="new-attributes">
+                        <h3>Attributes</h3>
+                        <section className="attribute-inputs">
+                            <section>
+                                <label htmlFor="">Health: </label>
+                                <input placeholder="Type Here" type="text" onChange={e => { setAttributesHealth(e.target.value) }} />
+                            </section>
+                            <section>
+                                <label htmlFor="">Stamina: </label>
+                                <input placeholder="Type Here" type="text" onChange={e => { setAttributesStamina(e.target.value) }} />
+                            </section>
+                            <section>
+                                <label htmlFor="">Magicka: </label>
+                                <input placeholder="Type Here" type="text" onChange={e => { setAttributesMagicka(e.target.value) }} />
+                            </section>
+                        </section>
                     </section>
                     <h3>Champion Points</h3>
-                    <section className="champion-points">
-                        <h4>Blue Champion Points</h4>
-                        <label htmlFor="">Slottable 1: </label>
-                        <input type="text" onChange={e => { setCpBlueSlottable1(e.target.value) }} />
-                        <label htmlFor="">Slottable 2: </label>
-                        <input type="text" onChange={e => { setCpBlueSlottable2(e.target.value) }} />
-                        <label htmlFor="">Slottable 3: </label>
-                        <input type="text" onChange={e => { setCpBlueSlottable3(e.target.value) }} />
-                        <label htmlFor="">Slottable 4: </label>
-                        <input type="text" onChange={e => { setCpBlueSlottable4(e.target.value) }} />
-                        <h4>Red Champion Points</h4>
-                        <label htmlFor="">Slottable 1: </label>
-                        <input type="text" onChange={e => { setCpRedSlottable1(e.target.value) }} />
-                        <label htmlFor="">Slottable 2: </label>
-                        <input type="text" onChange={e => { setCpRedSlottable2(e.target.value) }} />
-                        <label htmlFor="">Slottable 3: </label>
-                        <input type="text" onChange={e => { setCpRedSlottable3(e.target.value) }} />
-                        <label htmlFor="">Slottable 4: </label>
-                        <input type="text" onChange={e => { setCpRedSlottable4(e.target.value) }} />
-                        <h4>Green Champion Points</h4>
-                        <label htmlFor="">Slottable 1: </label>
-                        <input type="text" onChange={e => { setCpGreenSlottable1(e.target.value) }} />
-                        <label htmlFor="">Slottable 2: </label>
-                        <input type="text" onChange={e => { setCpGreenSlottable2(e.target.value) }} />
-                        <label htmlFor="">Slottable 3: </label>
-                        <input type="text" onChange={e => { setCpGreenSlottable3(e.target.value) }} />
-                        <label htmlFor="">Slottable 4: </label>
-                        <input type="text" onChange={e => { setCpGreenSlottable4(e.target.value) }} />
+                    <section className="create-champion-points">
+                        <section className="new-champion-points">
+                            <h4>Blue Champion Points</h4>
+                            <section>
+                                <label htmlFor="">Slottable 1: </label>
+                                <input placeholder="Type Here" type="text" onChange={e => { setCpBlueSlottable1(e.target.value) }} />
+                                <label htmlFor="">Slottable 2: </label>
+                                <input placeholder="Type Here" type="text" onChange={e => { setCpBlueSlottable2(e.target.value) }} />
+                                <label htmlFor="">Slottable 3: </label>
+                                <input placeholder="Type Here" type="text" onChange={e => { setCpBlueSlottable3(e.target.value) }} />
+                                <label htmlFor="">Slottable 4: </label>
+                                <input placeholder="Type Here" type="text" onChange={e => { setCpBlueSlottable4(e.target.value) }} />
+                            </section>
+                        </section>
+                        <section className="new-champion-points">
+                            <h4>Red Champion Points</h4>
+                            <section>
+                                <label htmlFor="">Slottable 1: </label>
+                                <input placeholder="Type Here" type="text" onChange={e => { setCpRedSlottable1(e.target.value) }} />
+                                <label htmlFor="">Slottable 2: </label>
+                                <input placeholder="Type Here" type="text" onChange={e => { setCpRedSlottable2(e.target.value) }} />
+                                <label htmlFor="">Slottable 3: </label>
+                                <input placeholder="Type Here" type="text" onChange={e => { setCpRedSlottable3(e.target.value) }} />
+                                <label htmlFor="">Slottable 4: </label>
+                                <input placeholder="Type Here" type="text" onChange={e => { setCpRedSlottable4(e.target.value) }} />
+                            </section>
+                        </section>
+                        <section className="new-champion-points">
+                            <h4>Green Champion Points</h4>
+                            <section>
+                                <label htmlFor="">Slottable 1: </label>
+                                <input placeholder="Type Here" type="text" onChange={e => { setCpGreenSlottable1(e.target.value) }} />
+                                <label htmlFor="">Slottable 2: </label>
+                                <input placeholder="Type Here" type="text" onChange={e => { setCpGreenSlottable2(e.target.value) }} />
+                                <label htmlFor="">Slottable 3: </label>
+                                <input placeholder="Type Here" type="text" onChange={e => { setCpGreenSlottable3(e.target.value) }} />
+                                <label htmlFor="">Slottable 4: </label>
+                                <input placeholder="Type Here" type="text" onChange={e => { setCpGreenSlottable4(e.target.value) }} />
+                            </section>
+                        </section>
                     </section>
                     <h3>Consumables and Mundus Stone</h3>
                     <section className="consumables-and-mundus">
-                        <label htmlFor="">Food: </label>
-                        <input type="text" onChange={e => { setConsumableFood(e.target.value) }} />
-                        <label htmlFor="">Potion: </label>
-                        <input type="text" onChange={e => { setConsumablePotion(e.target.value) }} />
-                        <label htmlFor="">Mundus: </label>
-                        <input type="text" onChange={e => { setMundusStone(e.target.value) }} />
+                        <section className="new-consumables">
+                            <label htmlFor="">Food: </label>
+                            <input placeholder="Type Here" type="text" onChange={e => { setConsumableFood(e.target.value) }} />
+                        </section>
+                        <section className="new-consumables">
+                            <label htmlFor="">Potion: </label>
+                            <input placeholder="Type Here" type="text" onChange={e => { setConsumablePotion(e.target.value) }} />
+                        </section>
+                        <section className="new-consumables">
+                            <label htmlFor="">Mundus: </label>
+                            <input placeholder="Type Here" type="text" onChange={e => { setMundusStone(e.target.value) }} />
+                        </section>
                     </section>
-                    <button onClick={() => { sendNewGuideData() }}><h3>Submit</h3></button>
+                    <section className="center-align">
+                        <button className="create-new-submit" onClick={() => { sendNewGuideData() }}><h3>Submit</h3></button>
+                    </section>
                 </section>
             </section>
         </>

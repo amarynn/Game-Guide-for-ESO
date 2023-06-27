@@ -22,14 +22,14 @@
     display: flex;
     flex-direction: column;
     justify-content: left;
-    background-color: rgba(0, 0, 0, 0.553);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.857), rgba(0, 0, 0, 0.649) 90%, rgba(0, 0, 0, 0));
     position: fixed;
     min-height: 962px;
 }
 
 .vert-nav-bar-links {
     border: 10px;
-    margin: 30px 0px 50px 30px;
+    margin: 40px 0px 50px 30px;
     text-decoration: none;
     text-align: center;
     padding-top: 30px;
@@ -37,8 +37,7 @@
     height: 50px;
     width: 220px;
     background-color: black;
-    border-style: solid;
-    border-color: rgba(0, 100, 0, 0.641);
+    border: 5px solid rgba(100, 73, 0, 0.622);
     border-radius: 10px;
 }
 
@@ -46,8 +45,37 @@
     background-color: rgb(57, 57, 57);
 }
 
+.home-image {
+    max-width: 80%;
+    margin: 0 10% 0 10%;
+}
+
+.home-page-title {
+    margin: 30px auto 6px auto;
+}
+
+.home-page-content {
+    padding: 0 10%;
+}
+
+.base-page-links {
+    color: white;
+    text-align: center;
+    margin: 3% auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.base-page-links a {
+    text-decoration: none;
+    color: aqua;
+}
+
+
 .page-content {
-    background-color: rgba(0, 0, 0, 0.723);
+    background-color: rgba(0, 0, 0, 0.793);
     margin-top: 50px;
     margin-left: 600px;
     width: 1000px;
@@ -89,6 +117,9 @@
     height: 35px;
     font-size: 1.3rem;
     text-align: center;
+    background-color: black;
+    color: white;
+    border: 2px solid rgba(223, 223, 223, 0.724);
 }
 
 .filters {
@@ -101,7 +132,7 @@
     justify-content: center;
     gap: 20px;
     width: 650px;
-    background-color: rgb(31, 8, 0);
+    background-color: rgb(35, 35, 35);
     border-style: solid;
     border-radius: 10px;
     border-color: rgba(0, 100, 0, 0.641);
@@ -136,18 +167,24 @@
     flex-direction: row;
     justify-content: right;
     gap: 8px;
-    margin-right: 35px;
+    margin-right: 15px;
     margin-bottom: 5px;
     font-size: 1.3rem;
 }
 
+.likes label {
+    margin: 0;
+}
+
 .likes button {
-    background-color: rgb(0, 0, 99);
+    background-color: rgba(1, 1, 123, 0.963);
     font-size: 1rem;
     color: white;
     border-radius: 15px;
-    border: 3px solid rgb(0, 12, 234);
+    border: 3px solid rgb(74, 102, 216);
     cursor: pointer;
+    margin: 0;
+    padding: 2px 7px 2px 7px;
 }
 
 .guide-description {
@@ -263,6 +300,63 @@
 
 .consumables-and-mundus p {
     margin-right: 15px;
+}
+
+.new-comment {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.new-comment-ui {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.new-comment-input {
+    min-height: 80px;
+    min-width: 700px;
+    background-color: black;
+    color: white;
+    resize: none;
+}
+
+.new-comment-submit {
+    height: 30px;
+    width: 80px;
+    margin: 10px auto;
+    background-color: black;
+    color: white;
+    border: 5px solid rgba(0, 53, 189, 0.618);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.comment-list {
+    margin: 20px auto 50px auto;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+}
+
+.comment {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    text-align: left;
+    padding: 0px 10px 0px 10px;
+    width: 600px;
+    background-color: black;
+    color: white;
+    border: 5px solid rgba(0, 100, 0, 0.641);
+    border-radius: 15px;
+}
+
+.comment h5 {
+    margin-top: 12px;
+    margin-right: 10px;
+    color: rgb(255, 233, 204);
 }
 
 ul {

@@ -45,7 +45,7 @@ function Search() {
     }
 
     useEffect(getFilteredGuides, [searchClassFilter, searchRoleFilter])
-    useEffect(filterResults, [searchTerm, getFilteredGuides, guideList])
+    useEffect(filterResults, [searchTerm])
 
     return (
         <>
